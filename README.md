@@ -6,7 +6,7 @@ In this application, we performed credit risk analysis using supervised machine 
 
 The purpose of the analysis was to to build a model that can predict the creditworthiness of borrowers using a dataset of historical lending activity.
 
-* For this analysis, we used a dataset of historical lending activity from a peer-to-peer lending services company. 
+* For this analysis, we used a dataset of historical lending activity from a peer-to-peer lending services company.
 
 * We used a variable called loan_status to analyze and predict our outcomes. A "0" was used to indicate a loan that was paid back, and a "1" was used to indicate a loan that was defaulted on. Using the value_counts function on the loan_status column, we could determine that 75,036 loans were paid back, and 2,500 loans were defaulted.
 
@@ -16,20 +16,27 @@ The purpose of the analysis was to to build a model that can predict the creditw
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+Machine Learning Model 1 (Using Baseline Data):
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+  * The balanced accuracy score of our initial work was 99.28%.
+  
+  * The precision and the recall for the 0 class (the "healthy loan" transactions) was much better than that for the 1 class (the "high risk loan" transactions).
+  
+  * This was in part due to the fact that our initial data was imbalanced -- with a much higher percentage of healthy loans than hig risk loans.
 
 
+Machine Learning Model 2 (Using Resampled Data):
 
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+* The balanced accuracy score of our resampled data was 99.34% (similar to the first analysis).
+
+* The precision of the resampled analysis was roughly the same as the initial analysis.
+
+* The recall for the resampled analysis for the 1 class (the "high risk loan" transactions) was substantially improved over the initial analysis (99% instead of 90%).
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+* The resampled analysis performed much better. By resampling the data to produce the same number of data points between the 0 class and 1 class loans, we improved the recall.
 
-If you do not recommend any of the models, please justify your reasoning.
+* Performance does depend on the problem we are trying to solve -- it is more important to predict the `1`'s (the high risk loans) than it is to predict the `0`'s? (the healthy loans) -- due to the capital risk to the lender of being "wrong".
+
+* We recommend using the second analysis/model to evaluate loans going forward for the lender.
