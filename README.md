@@ -4,11 +4,15 @@
 
 In this application, we performed credit risk analysis using supervised machine learning techniques.
 
-* The purpose of the analysis was to....
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+The purpose of the analysis was to to build a model that can predict the creditworthiness of borrowers using a dataset of historical lending activity.
+
+* For this analysis, we used a dataset of historical lending activity from a peer-to-peer lending services company. 
+
+* We used a variable called loan_status to analyze and predict our outcomes. A "0" was used to indicate a loan that was paid back, and a "1" was used to indicate a loan that was defaulted on. Using the value_counts function on the loan_status column, we could determine that 75,036 loans were paid back, and 2,500 loans were defaulted.
+
+* We used the model-fit-predict pattern to perform our analysis. First, we split the data into training and testing datasets by using `train_test_split` function. Then we fit a logistic regression model by using the training data (X_train and y_train). Finally, we evaluated the model’s performance by calculating the accuracy score of the model, generating a confusion matrix, and printing a classification report.
+
+* We used the LogisticRegrssion module initially. Then, we used the RandomOverSampler module from the imbalanced-learn library to resample the data -- to transform our data so that the labels had an equal number of data points.
 
 ## Results
 
